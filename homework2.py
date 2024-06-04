@@ -1,8 +1,6 @@
-name = "ДМИТРИЙ"
-print(name)
-age = 53
-print(age)
-age = age + 1
-print(age)
-is_student = True
-print(is_student)
+kol_hw = 12
+kol_hours = 1.5
+course_name = "Python"
+time_task = kol_hours/kol_hw
+print("Курс:", course_name, ", всего задач:", kol_hw, ', затрачено часов:',
+      kol_hours, ', среднее время выполнения', time_task, 'часа.')
