@@ -5,5 +5,5 @@ while not (n == len(my_list)):
         print(my_list[n])
         n = n + 1
         continue
-    elif my_list[n] < 0:
+    else:
         break
