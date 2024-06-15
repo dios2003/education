@@ -15,7 +15,6 @@ def get_kod_1(n):
                     _list_result.append(numbers_1[j])
                 continue
             numbers_1.remove(numbers_1[j])
-        print(numbers_1)
     return _list_result
 
 
