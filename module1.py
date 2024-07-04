@@ -5,5 +5,5 @@ def test_function():
     return
 
 
-y = test_function()
-x = inner_function()
+test_function()
+inner_function()
