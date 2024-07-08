@@ -13,8 +13,8 @@ class House:
                     print(i)
 
     def __str__(self):
-        self.name = f"Название: {self.name}, кол-во этажей: {self.number_of_floors}"
-        return self.name
+        _str = f"Название: {self.name}, кол-во этажей: {self.number_of_floors}"
+        return _str
 
     def __len__(self):
         return self.number_of_floors
