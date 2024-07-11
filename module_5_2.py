@@ -8,9 +8,8 @@ class House:
         if new_floor > self.number_of_floors or new_floor < 1:
             print('Такого этажа не существует')
         else:
-            for i in range(self.number_of_floors+1):
-                if 0 < i <= new_floor:
-                    print(i)
+            for i in range(1, new_floor + 1):
+                print(i)
 
     def __str__(self):
         return f"Название: {self.name}, кол-во этажей: {self.number_of_floors}"
