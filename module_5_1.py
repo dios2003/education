@@ -1,3 +1,4 @@
+# Атрибуты и методы объекта
 class House:
     def __init__(self, name, number_of_floors):
         self.name = name
@@ -7,8 +8,8 @@ class House:
         if new_floor > self.number_of_floors or new_floor < 1:
             print('Такого этажа не существует')
         else:
-            for i in range(1, self.number_of_floors):
-                if i <= new_floor:
+            for i in range(self.number_of_floors+1):
+                if 0 < i <= new_floor:
                     print(i)
 
 
