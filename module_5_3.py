@@ -9,7 +9,7 @@ class House:
             print('Такого этажа не существует')
         else:
             for i in range(1, new_floor+1):
-                    print(i)
+                print(i)
 
     def __str__(self):
         return f"Название: {self.name}, кол-во этажей: {self.number_of_floors}"
@@ -46,12 +46,10 @@ class House:
         return self
 
     def __radd__(self, value):
-        self.number_of_floors = value + self.number_of_floors
-        return self
+        return self.__add__(value)
 
     def __iadd__(self, value):
-        self.number_of_floors += value
-        return self
+        return self.__add__(value)
 
 
 h1 = House('ЖК Эльбрус', 10)
