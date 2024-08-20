@@ -9,15 +9,12 @@ class Animal:
     def eat(self, food):
         if isinstance(food, Flower):
             food.edible = False
-        if isinstance(food, Fruit):
-            food.edible = True
-        if food.edible:
-            print(f'{self.name} съел {food.name}')
-            self.fed = True
-        else:
             print(f'{self.name} не стал есть {food.name}')
             self.alive = False
-        return
+        if isinstance(food, Fruit):
+            food.edible = True
+            print(f'{self.name} съел {food.name}')
+            self.fed = True
 
 
 class Plant:
