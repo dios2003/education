@@ -7,6 +7,10 @@ class Animal:
         self.fed = fed
 
     def eat(self, food):
+        if isinstance(food, Flower):
+            food.edible = False
+        if isinstance(food, Fruit):
+            food.edible = True
         if food.edible:
             print(f'{self.name} съел {food.name}')
             self.fed = True
@@ -31,17 +35,11 @@ class Predator(Animal):
 
 
 class Flower(Plant):
-    def __init__(self, name, edible=False):
-        self.name = name
-        self.edible = edible
-        return
+    pass
 
 
 class Fruit(Plant):
-    def __init__(self, name, edible=True):
-        self.name = name
-        self.edible = edible
-        return
+    pass
 
 
 a1 = Predator('Волк с Уолл-Стрит')
