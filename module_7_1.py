@@ -5,33 +5,39 @@ class Product:
         self.name = str(name)
         self.weight = float(weight)
         self.category = str(category)
-        self.line = str()
+        # self.line = str()
 
     def __str__(self):
-        self.line = f'{self.name}, {self.weight}, {self.category}'
-        return self.line
+        # self.line = f'{self.name}, {self.weight}, {self.category}'
+        return f'{self.name}, {self.weight}, {self.category}'
 
 
 class Shop:
     def __init__(self):
         self.__file_name = 'products.txt'
-        super().__init__()
+        # super().__init__()
 
     def get_products(self):
         file = open(self.__file_name, 'r')
-        Product.line = file.read()
+        products = file.read()
         file.close()
-        return Product.line
+        return products
 
     def add(self, *products):
-        Product.line = Shop.get_products(self)
+        # Product.line = Shop.get_products(self)
+        current_products = self.get_products()
         file = open(self.__file_name, 'a')
-        for i in range(0, len(products)):
-            if Product.__str__(products[i]) in Product.line:
-                product_line = str.split(Product.__str__(products[i]))
-                print(f'Продукт {''.join(product_line)} уже есть в магазине.')
+        # for i in range(0, len(products)):
+        for product in products:
+            # if Product.__str__(products[i]) in Product.line:
+            if str(product) not in current_products:
+                file.write(str(product) + '\n')
+                current_products += str(product) + '\n'
+                # product_line = str.split(Product.__str__(products[i]))
+                # print(f'Продукт {''.join(product_line)} уже есть в магазине.')
             else:
-                file.write(Product.__str__(products[i]) + '\n')
+                # file.write(Product.__str__(products[i]) + '\n')
+                print(f'Продукт {product} уже есть в магазине.')
         file.close()
         return
 
