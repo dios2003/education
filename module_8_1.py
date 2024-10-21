@@ -1,9 +1,10 @@
 # Try и Except
 
 def add_everything_up(a, b):
+    result = ''
     try:
         result = a+b
-    except TypeError as exc:
+    except TypeError:
         result = str(a) + str(b)
     else:
         if isinstance(result, float):
