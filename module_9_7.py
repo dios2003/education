@@ -6,7 +6,7 @@ def is_prime(func):
         if result_func < 2:
             print('Не принадлежит к простым и составным числам')
             return result_func
-        for i in range(2, int(result_func / 2 + 1)):
+        for i in range(2, int(result_func**0.5 + 1)):
             if result_func % i == 0:
                 print('Составное')
                 break
@@ -28,5 +28,5 @@ print(result)
 result = sum_three(2, 2, 2)
 print(result)
 
-result = sum_three(2, 2, 2)
+result = sum_three(4, 4, 4)
 print(result)
