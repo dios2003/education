@@ -1,14 +1,15 @@
 # Декораторы в Python
 
 def is_prime(func):
-    def wrapper(*args):
+    def wrapper(*args, **kwargs):
         result_func = func(*args)
         if result_func < 2:
             print('Не принадлежит к простым и составным числам')
             return result_func
-        for i in range(2, int(result_func ** 0.5 + 1)):
+        for i in range(2, int(result_func / 2 + 1)):
             if result_func % i == 0:
                 print('Составное')
+                break
         else:
             print('Простое')
         return result_func
@@ -24,8 +25,8 @@ def sum_three(*args):
 result = sum_three(2, 3, 6)
 print(result)
 
-# result = sum_three(0, 1, 1)
-# print(result)
+result = sum_three(2, 2, 2)
+print(result)
 
-# result = sum_three(0, 1, 0)
-# print(result)
+result = sum_three(2, 2, 2)
+print(result)
