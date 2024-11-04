@@ -11,7 +11,6 @@ class Bank:
     def __init__(self):
         self.balance = 0
         self.lock = threading.Lock()
-        self.lock.acquire()
 
     def deposit(self):
         for i in range(100):
