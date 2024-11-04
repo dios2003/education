@@ -33,7 +33,8 @@ second_knight = Knight("Sir Galahad", 20)
 # Запуск потоков и остановка текущего
 first_knight.start()
 second_knight.start()
-# Вывод строки об окончании сражения
 first_knight.join()
 second_knight.join()
+# Вывод строки об окончании сражения
+first_knight.join()
 print('Все битвы закончились!')
