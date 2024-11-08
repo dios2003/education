@@ -21,7 +21,7 @@ filenames = [f'./file {number}.txt' for number in range(1, 5)]
 # Линейный вызов
 # start_time = time()
 # for i in range(0, len(filenames)):
-    # read_info(filenames[i])
+# read_info(filenames[i])
 # end_time = time()
 # work_time = datetime.timedelta(seconds=end_time - start_time)
 # print(f'{work_time} (линейный)')
