@@ -4,7 +4,9 @@ import requests
 import json
 import numpy as np
 import pandas as pd
+import time
 from PIL import Image
+
 
 
 def state_response():
@@ -52,18 +54,18 @@ def state_response():
     else:
         print(f'Ошибка {response.status_code}')
 
-    # request.post для отправки изображений на сервер
-    # print(f'Добавляем изображения на сайт')
-    # for i in range(0, len(images)):
-    #   img = Image.open(images[i])
-    #   img.show()
-    #url = 'https://httpbin.org/post'
-    #multiple_files = [
-        #('images', ('dog.png', open('dog.png', 'rb'), 'image/png')),
-        #('images', ('tiger.jpg', open('tiger.jpg', 'rb'), 'image/png'))]
-    #response = requests.post(url, files=multiple_files)
-    #time.sleep(5)
-    #print(f'Код состояния {response}' + '\n')
+#request.post для отправки изображений на сервер
+    print(f'Добавляем изображения на сайт')
+    images = ['dog.png', 'tiger.jpg']
+    for i in range(0, len(images)):
+        img = Image.open(images[i])
+        img.show()
+        url = 'https://httpbin.org/post'
+        multiple_files = [('images', ('dog.png', open('dog.png', 'rb'), 'image/png')),
+                      ('images', ('tiger.jpg', open('tiger.jpg', 'rb'), 'image/png'))]
+    response = requests.post(url, files=multiple_files)
+    time.sleep(5)
+    print(f'Код состояния {response}' + '\n')
 
     # requests.options описывает параметры связи для целевого ресурса, идентифицируемого по заданному URL-адресу
     response = requests.options('https://api.open-meteo.com/v1/forecast')
@@ -119,4 +121,3 @@ def pan_das():
 example_requests = state_response()
 example_numpy = num_py()
 example_pandas = pan_das()
-
