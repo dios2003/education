@@ -6,6 +6,7 @@ import runner
 
 
 class RunnerTest(unittest.TestCase):
+    is_frozen = False
     def test_run(self):
         self.name = 'Фёдор'
         r1 = runner.Runner(self.name)

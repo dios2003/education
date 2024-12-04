@@ -5,6 +5,7 @@ import runner_and_tournament
 
 
 class TournamentTest(unittest.TestCase):
+    is_frozen = True
     def setUp(self):
         self.name_1 = 'Усэйн'
         self.speed_1 = 10
@@ -22,6 +23,7 @@ class TournamentTest(unittest.TestCase):
             result = self.all_results[i]
             self.assertTrue(result[len(result)] == self.name_3)
 
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_run_1(self):
         self.distance = 90
         r1 = runner_and_tournament.Runner(self.name_1, self.speed_1)
@@ -29,6 +31,7 @@ class TournamentTest(unittest.TestCase):
         runner_tournament = runner_and_tournament.Tournament(self.distance, r1, r3)
         self.all_results[1]= runner_tournament.start()
 
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_run_2(self):
         self.distance = 90
         r2 = runner_and_tournament.Runner(self.name_2, self.speed_2)
@@ -36,6 +39,7 @@ class TournamentTest(unittest.TestCase):
         runner_tournament = runner_and_tournament.Tournament(self.distance, r2, r3)
         self.all_results[2] = runner_tournament.start()
 
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_run_3(self):
         self.distance = 90
         r1 = runner_and_tournament.Runner(self.name_1, self.speed_1)
@@ -43,6 +47,7 @@ class TournamentTest(unittest.TestCase):
         r3 = runner_and_tournament.Runner(self.name_3, self.speed_3)
         runner_tournament = runner_and_tournament.Tournament(self.distance, r1, r2, r3)
         self.all_results[3] = runner_tournament.start()
+
 
     @classmethod
     def tearDownClass(cls):
